@@ -1,19 +1,12 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import "./style.css";
+import { createRoot } from "react-dom/client";
 import Header from "./components/Header/Header";
 
 const App = () => {
   return (
-    <Router>
+    <div>
       <Header />
-      <MainContent>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-        </Routes>
-      </MainContent>
-      <Footer />
-    </Router>
+    </div>
   );
 };
 
