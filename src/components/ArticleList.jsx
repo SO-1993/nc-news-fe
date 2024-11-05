@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 import { fetchArticles } from "../utils/api";
@@ -33,9 +34,13 @@ function ArticleList() {
 
   return (
     <ul>
-      {articles.map((article) => {
-        return <ArticleCard key={article.article_id} article={article} />;
-      })}
+      {articles.map((article) => (
+        <li key={article.article_id}>
+          <Link to={`/articles/${article.article_id}`}>
+            <ArticleCard article={article} />
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 }

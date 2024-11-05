@@ -4,13 +4,17 @@ import "./App.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import ArticleList from "./components/ArticleList";
+import ArticleDetail from "./components/ArticleDetail";
 
 function App() {
   return (
     <>
       <Header />
       <Nav />
-      <ArticleList />
+      <Routes>
+        <Route path="/" element={<ArticleList />} />
+        <Route path="/articles/:articleId" element={<ArticleDetail />} />
+      </Routes>
     </>
   );
 }
