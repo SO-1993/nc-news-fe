@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticle } from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import CommentList from "./CommentList";
+// import CommentInput from "./CommentInput";
 import "../App.css";
 
 function ArticleDetail() {
@@ -39,6 +41,8 @@ function ArticleDetail() {
   return (
     <div>
       <ArticleCard article={article} />
+      <CommentList articleId={articleId} />
+      {/* <CommentInput articleId={articleId} /> */}
 
       <p>{article.body}</p>
     </div>

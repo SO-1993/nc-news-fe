@@ -15,4 +15,32 @@ const fetchArticle = (articleId) => {
   });
 };
 
-export { fetchArticles, fetchArticle };
+const fetchComments = (articleId) => {
+  return api.get(`/articles/${articleId}/comments`).then((response) => {
+    return response.data.comments;
+  });
+};
+
+// For use later on Comments components
+
+// const deleteComment = (commentId) => {
+//   return api.delete(`/comments/${commentId}`).then((response) => {
+//     return response.data;
+//   });
+// };
+
+// const postComment = (articleId, commentData) => {
+//   return api
+//     .post(`/articles/${articleId}/comments`, commentData)
+//     .then((response) => {
+//       return response.data.comment;
+//     });
+// };
+
+export {
+  fetchArticles,
+  fetchArticle,
+  fetchComments,
+  // deleteComment,
+  // postComment,
+};
