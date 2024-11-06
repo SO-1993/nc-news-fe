@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../App.css";
 import { Routes, Route, useParams, Link } from "react-router-dom";
 import { fetchComments } from "../utils/api";
 import ArticleCard from "./ArticleCard";
@@ -22,6 +21,7 @@ function CommentList() {
       .catch((error) => {
         setLoading(false);
         setError(true);
+        console.error("Error fetching comments: ", error);
       });
   }, [articleId]);
 
@@ -32,6 +32,11 @@ function CommentList() {
   if (loading) {
     return <p>Loading comments...</p>;
   }
+
+  if (!comments.length) {
+    return <p>No comments yet for this article.</p>;
+  }
+
   return (
     <div>
       <ul>
