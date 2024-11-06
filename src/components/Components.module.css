@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* header styling */
+.header {
+  background-color: pink;
+  text-align: center;
+}
+
+/* title styling */
+.title {
+  color: yellow;
+  font-size: 24px;
+}
+
+/* navbar styling */
+.navBar {
+  background-color: rgb(139, 127, 150);
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+  top: 0px;
+}
+
+.logoNavItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.logoNavItem img {
+  max-width: 100%;
+  height: auto;
+}
+
+.searchBtnNavItem {
+  border-radius: 12px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: text-transform 1s ease-in;
+}
+
+.searchBtnNavItem:hover {
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: yellow;
+}
+
+/* ArticleCard styling */
+
+.articleCard {
+  background-color: rgb(150, 217, 150);
+  color: black;
+  padding: 20px 10px;
+}
+
+/* ArticleDetail styling */
+
+.vote {
+  color: pink;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.voteDown,
+.voteUp {
+  border-radius: 12px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: text-transform 1s ease-in;
+}
+
+.voteDown:hover {
+  background-color: red;
+  color: white;
+}
+
+.voteUp:hover {
+  background-color: green;
+  color: white;
+}
+
+/* ArticleList styling */

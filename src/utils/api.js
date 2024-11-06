@@ -15,6 +15,14 @@ const fetchArticle = (articleId) => {
   });
 };
 
+const voteOnArticle = (articleId, voteType) => {
+  return api
+    .patch(`/articles/${articleId}/votes`, { voteType })
+    .then((response) => {
+      return response.data.votes;
+    });
+};
+
 const fetchComments = (articleId) => {
   return api.get(`/articles/${articleId}/comments`).then((response) => {
     return response.data.comments;
@@ -41,6 +49,7 @@ export {
   fetchArticles,
   fetchArticle,
   fetchComments,
+  voteOnArticle,
   // deleteComment,
   // postComment,
 };

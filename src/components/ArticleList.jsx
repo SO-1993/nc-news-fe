@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import "../App.css";
 import { fetchArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import styles from "./Components.module.css";
 
 function ArticleList() {
   const [articles, setArticles] = useState([]);
@@ -25,17 +24,21 @@ function ArticleList() {
   }, []);
 
   if (error) {
-    return <p>There has been an error!</p>;
+    return <p className={styles.error}> There has been an error!</p>;
   }
 
   if (loading) {
-    return <p>Loading articles...</p>;
+    return <p className={styles.loading}>Loading articles...</p>;
+  }
+
+  if (articles.length === 0) {
+    return <p className={styles.empty}>No articles available.</p>;
   }
 
   return (
-    <ul>
+    <ul className={styles.articleList}>
       {articles.map((article) => (
-        <li key={article.article_id}>
+        <li key={article.article_id} className={styles.articleItem}>
           <Link to={`/articles/${article.article_id}`}>
             <ArticleCard article={article} />
           </Link>
